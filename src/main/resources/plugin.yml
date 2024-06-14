@@ -1,0 +1,7 @@
+name: ancHypeTrain
+version: '${project.version}'
+main: com.ancienty.anchypetrain.Main
+api-version: '1.16'
+load: STARTUP
+author: [Ancienty]
+depend: [Vault]

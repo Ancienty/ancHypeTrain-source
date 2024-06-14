@@ -1,0 +1,56 @@
+menu:
+  menu_name: "&6Hype Train Information"
+  row-size: 5 # 1-6
+  items:
+    info:
+      material: head-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmFkYzA0OGE3Y2U3OGY3ZGFkNzJhMDdkYTI3ZDg1YzA5MTY4ODFlNTUyMmVlZWQxZTNkYWYyMTdhMzhjMWEifX19
+      name: "&d&l&nBILGILENDIRME"
+      lore:
+        - ""
+        - "&7 Hype Train, birtakım bağış "
+        - "&7 hedeflerine ulaşıldığında "
+        - "&7 oyuncuları ödüllendiren "
+        - "&7 gelişmiş bir etkinlik "
+        - "&7 sistemidir."
+        - ""
+        - " &8• &eTrain seviyesi: &8[&6{train_level}&8] "
+        - " &8• &eToplam bağışlar: &8[&6${total_donations}&8] "
+        - " &8• &eSonraki seviye: &8[&6${required_next}&8] "
+        - " &8• &eSonraki seviye ödülleri: &6{next_level_rewards} "
+        - ""
+        - "&8Sunucuya bağışta bulunmak için tıkla! "
+        - ""
+      run-command: "store"
+      slot: 13
+  received-donations:
+    name: "&eBağışçı: &8[&6{player}&8]"
+    lore:
+      - ""
+      - " &8• &7Ürün: &8[&6{package_name}&8] "
+      - " &8• &7Tarih: &8[&6{date}&8] "
+      - " &8• &7Fiyat: &8[&6${price}&8] "
+      - ""
+    slots:
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+  filler-item:
+    # If you don't want to use filler items, please set material to AIR.
+    material: BLACK_STAINED_GLASS_PANE
+
+
+lang:
+  prefix: "&8[&5ancHypeTrain&8] "
+  info_command: "&7Lütfen komutu şu şekilde kullanın: &d/aht info"
+  info_admin_command: "&c&l(ADMIN) &d/aht give player package &7veya &d/aht packages"
+  player_not_found: "&7Bu oyuncuyu bulamadım."
+  broadcast_purchase: "&d{player} &7adlı oyuncu &d{package} &7satın aldı!"
+  successful_purchase: "&7Başarıyla &d{package}&7 satın aldın!"
+  giving_out_rewards: "&dSv {level} &7bağış hedefine ulaşıldı. Ödüller dağıtılıyor!"
+  time_has_run_out: "&7Gerisayım 0'a ulaştı, Hype Train &cSv {level}&7'de sonlandı."
+  no_permission: "&7Bu komut için gerekli yetkilere sahip değilsin."
+  package_list: "&7Bunlar, şu anda aktif olan package türleri: &d{packages}&7."

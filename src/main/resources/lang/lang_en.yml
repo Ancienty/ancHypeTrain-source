@@ -1,0 +1,57 @@
+menu:
+  menu_name: "&6Hype Train Information"
+  row-size: 5 # 1-6
+  items:
+    info:
+      material: head-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmFkYzA0OGE3Y2U3OGY3ZGFkNzJhMDdkYTI3ZDg1YzA5MTY4ODFlNTUyMmVlZWQxZTNkYWYyMTdhMzhjMWEifX19
+      name: "&d&l&nINFORMATION"
+      lore:
+        - ""
+        - "&7 Hype Train is a system which "
+        - "&7 rewards players for donating "
+        - "&7 to the server. When certain "
+        - "&7 donation criteria are met "
+        - "&7 rewards are given out to "
+        - "&7 players."
+        - ""
+        - " &8• &eTrain level: &8[&6{train_level}&8] "
+        - " &8• &eTotal donations: &8[&6${total_donations}&8] "
+        - " &8• &eRequired for next: &8[&6${required_next}&8] "
+        - " &8• &eNext level rewards: &6{next_level_rewards} "
+        - ""
+        - "&8Click here to donate to the server! "
+        - ""
+      run-command: "store"
+      slot: 13
+  received-donations:
+    name: "&eDonator: &8[&6{player}&8]"
+    lore:
+      - ""
+      - " &8• &7Bought: &8[&6{package_name}&8] "
+      - " &8• &7Date: &8[&6{date}&8] "
+      - " &8• &7Price: &8[&6${price}&8] "
+      - ""
+    slots:
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+  filler-item:
+    # If you don't want to use filler items, please set material to AIR.
+    material: BLACK_STAINED_GLASS_PANE
+
+
+lang:
+  prefix: "&8[&5ancHypeTrain&8] "
+  info_command: "&7Please use the command accordingly: &d/aht info"
+  info_admin_command: "&c&l(ADMIN) &d/aht give player package &7or &d/aht packages"
+  player_not_found: "&7I couldn't find this player."
+  broadcast_purchase: "&d{player} &7has purchased &d{package}&7!"
+  successful_purchase: "&7You have successfully purchased package: &d{package}&7!"
+  giving_out_rewards: "&7Donation requirements for &dLv {level} &7has been met. Giving out the rewards!"
+  time_has_run_out: "&7Countdown has run out, hype train has ended at &cLv {level}&7."
+  no_permission: "&7You don't have the required permissions to use this command."
+  package_list: "&7These are the currently active packages: &d{packages}&7."

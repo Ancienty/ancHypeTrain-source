@@ -1,0 +1,93 @@
+config:
+  version: 1.0.3-licensed
+  lang: en # Only 'en' (English) and 'tr' (Turkish) are supported built-in.
+
+
+train:
+  # Where do you want the hype train to be displayed?
+  mode: bossbar # bossbar / actionbar / none
+  # Please refer to this link for available bossbar styles and colors.
+  # https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Bossbar
+  bossbar-style: NOTCHED_20
+  bossbar-color: RED
+  bossbar-progress: 100
+  # This is the format for actionbars and bossbars, feel free to edit this
+  # however you want.
+  format: "&5&lHYPE TRAIN &7is: &dLevel {level}! &7Requirements: &dLevel {next_level}: &7${remaining_donations} &8(&c{time_remaining}s&8) &8| &6/aht info"
+  # Should there be donation & hype train level-up announcements in the chat?
+  announce-messages: true
+  # How many seconds after the "Hype train" starts should it be
+  # terminated if no other donation is received to the server?
+  time: 600 # 10 minutes.
+  # How many seconds should the plugin wait to give out rewards
+  # after a new level of hype train is reached?
+  delay: 15 # 15 seconds.
+
+
+levels:
+  # Feel free to add as many levels as you want, the plugin will
+  # be able to keep up with any level you add, considering you've set
+  # them up correctly.
+  1:
+    # Threshold means, for the hype-train to reach this level, how much
+    # donation ($$) should be collected?
+    threshold: 50
+    rewards:
+      # There are 3 reward types: everyone, random, donator.
+      # everyone: Every single player currently active on the server will receive the rewards.
+      # random: xx amount of random players will be selected, and will receive the rewards.
+      # donator: Only the donator, who made the train level up, will receive the rewards.
+      type: everyone
+      # If the selected type is random, first a random integer between 2-5 will be selected,
+      # then, the plugin will select that many random players currently active on the server.
+      # After the players are selected, they will receive their rewards.
+      random: 2-5 # A random integer between 2-5
+      # These are the commands that will be executed when giving out rewards.
+      # You may use the variable {player}.
+      commands:
+        - "give {player} diamond 1"
+        - "give {player} emerald 2"
+        - "eco give {player} 200"
+      # Description is what players will see when they use the /aht info command
+      # these messages will be shown as the rewards they will receive when they hit
+      # this level.
+      description:
+        - "&b1 diamond"
+        - "&a2 emeralds"
+        - "&e$200 money"
+  2:
+    # Please note that, setting the threshold to 100 here means that
+    # if the server has received 100$, the train will level up to 2.
+    # The threshold from level 1 will not be added to this threshold.
+    threshold: 100
+    rewards:
+      type: random
+      random: 2-5
+      commands:
+        - "broadcast Woah! {player} is one of the lucky players!"
+        - "eco give {player} 500"
+        - "give {player} diamond 2"
+      description:
+        - "&e$500 money"
+        - "&b2 diamonds"
+
+
+packages:
+  # Packages are basically what you sell on your webpage.
+  # Since the plugin cannot automatically listen to your webpage, we will
+  # need a way to determine when a player buys something, and what it's price is.
+  # So you will need to fill in this part before you can actually start using the plugin.
+  # Upper-case letters are not supported here!
+  vip:
+    # Price is the amount of money the player has paid to buy this item on your
+    # webstore, these prices will be calculated to level up the train.
+    price: 13.99
+    # Do you want the plugin to broadcast a message when this package is bought?
+    broadcast: true
+    # If broadcast is true, do you want the plugin to use the global message, or set your own?
+    # To use global, just type in: "global", if you want to use a custom message for this package
+    # Please type in what you want to be broadcasted.
+    broadcast-message: "global"
+    # The commands that will be executed when this package is bought:
+    commands:
+      - "lp user {player} parent add VIP"
